@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:5000'); // Replace with your server URL
+const socket = io.connect('https://project-software-engineering.onrender.com'); // Replace with your server URL
 
 function Chat({ loggedIn, currentUsername }) {
     const [room, setRoom] = useState('');

@@ -19,7 +19,7 @@ function RegisterPage() {
 
         try {
             // Send registration data to the backend
-            const response = await axios.post('http://localhost:5000/api/auth/register', {
+            const response = await axios.post('https://project-software-engineering.onrender.com/api/auth/register', {
                 username,
                 email,
                 password,

@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import io from 'socket.io-client';
 
 // Initialize socket connection to server
-const socket = io.connect('http://localhost:5000'); // Replace with your server URL
+const socket = io.connect('https://project-software-engineering.onrender.com'); // Replace with your server URL
 
 // Main VideoChat component
 function VideoChat({ currentUsername }) {

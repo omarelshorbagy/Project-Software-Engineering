@@ -5,7 +5,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 
 // Establish a socket connection to the backend server
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://project-software-engineering.onrender.com');
 
 // Navbar component to handle navigation and active users display
 function Navbar({ loggedIn, setLoggedIn, currentUsername }) {
@@ -17,7 +17,7 @@ function Navbar({ loggedIn, setLoggedIn, currentUsername }) {
         // Function to fetch active users from the server
         const fetchActiveUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/active-users');
+                const response = await axios.get('https://project-software-engineering.onrender.com/api/active-users');
                 setActiveUsers(response.data); // Set fetched users to state
             } catch (error) {
                 console.error('Error fetching active users:', error);
@@ -46,7 +46,7 @@ function Navbar({ loggedIn, setLoggedIn, currentUsername }) {
     const handleLogout = async () => {
         try {
             // Clear upload history on the server
-            await axios.post('http://localhost:5000/api/upload/clear-history');
+            await axios.post('https://project-software-engineering.onrender.com/api/upload/clear-history');
 
             // Emit logout event to the server if username exists
             if (currentUsername) {

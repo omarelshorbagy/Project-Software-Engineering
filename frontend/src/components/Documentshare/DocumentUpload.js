@@ -15,7 +15,7 @@ function DocumentUpload() {
     const fetchHistory = async () => {
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
-            const res = await axios.get('http://localhost:5000/api/upload/history', {
+            const res = await axios.get('https://project-software-engineering.onrender.com/api/upload/history', {
                 headers: {
                     Authorization: `Bearer ${token}`, // Add the token to the Authorization header
                 },
@@ -46,7 +46,7 @@ function DocumentUpload() {
 
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
-            const res = await axios.post('http://localhost:5000/api/upload', formData, {
+            const res = await axios.post('https://project-software-engineering.onrender.com/api/upload', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Add the token to the Authorization header
                     'Content-Type': 'multipart/form-data',
@@ -71,7 +71,7 @@ function DocumentUpload() {
     const deleteFile = async (id) => {
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
-            await axios.delete(`http://localhost:5000/api/upload/delete/${id}`, {
+            await axios.delete(`https://project-software-engineering.onrender.com/api/upload/delete/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Add the token to the Authorization header
                 },
@@ -88,7 +88,7 @@ function DocumentUpload() {
     const clearHistory = async () => {
         try {
             const token = localStorage.getItem('token'); // Get the token from localStorage
-            await axios.post('http://localhost:5000/api/upload/clear-history', null, {
+            await axios.post('https://project-software-engineering.onrender.com/api/upload/clear-history', null, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Add the token to the Authorization header
                 },
@@ -127,7 +127,7 @@ function DocumentUpload() {
                         <li key={entry._id}>
                             <strong>{entry.filename}</strong> - {entry.comment} <em>({new Date(entry.uploadDate).toLocaleString()})</em>
                             <br />
-                            <a href={`http://localhost:5000${entry.filepath}`} download>
+                            <a href={`https://project-software-engineering.onrender.com${entry.filepath}`} download>
                                 Download
                             </a>
                             <button onClick={() => deleteFile(entry._id)} style={{ marginLeft: '10px', color: 'red' }}>

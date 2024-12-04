@@ -33,7 +33,7 @@ function LoginPage({ onLogin }) {
             const normalizedEmail = email.trim().toLowerCase();
             console.log('Sending login request with normalized email:', normalizedEmail);
 
-            const response = await axios.post('http://localhost:5000/api/auth/login', {
+            const response = await axios.post('https://project-software-engineering.onrender.com/api/auth/login', {
                 email: normalizedEmail,  // Use normalized email here
                 password,
             });
