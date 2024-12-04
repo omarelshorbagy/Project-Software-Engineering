@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const socketIo = require('socket.io');
-const http = require('https');
+const http = require('http');
 const { connectDB } = require('./config/db');
 const fs = require('fs');
 const path = require('path');
@@ -15,8 +15,8 @@ const server = http.createServer(app);
 // Set up Socket.IO with CORS configuration
 const io = socketIo(server, {
     cors: {
-        origin: 'https://project-software-engineering-1.onrender.com',
-        methods: ["GET", "POST", "PUT", "DELETE"],
+        origin: ['http://localhost:3000', 'https://project-software-engineering-1.onrender.com'], // Add your deployed frontend URL
+        methods: ["GET", "POST"],
     }
 });
 
@@ -25,7 +25,9 @@ connectDB();
 
 // Middleware for CORS and JSON parsing
 app.use(cors({
-    origin: 'https://project-software-engineering-1.onrender.com',
+    origin: ['http://localhost:3000', 'https://project-software-engineering-1.onrender.com'], // Add your deployed frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // Allow credentials if needed
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
