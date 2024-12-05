@@ -65,6 +65,12 @@ Handling cross-origin resource sharing (CORS) during deployment.
 Working with Docker to ensure consistent environments.
 The importance of detailed documentation for smooth deployment and maintenance.
 
+## Glossary
+JWT: JSON Web Token, used for authentication.
+Docker: A tool for creating and running containers.
+MERN: A full-stack JavaScript framework comprising MongoDB, Express.js, React, and Node.js.
+
+
  
 
    
